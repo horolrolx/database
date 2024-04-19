@@ -59,13 +59,17 @@
 # 8. 데이터베이스 언어의 종류는 어떻게 있고 특징은 무엇인가 ?
 - 데이터 정의어 (DDL; Data Definition Language) : 데이터베이스의 스키마를 정의하는 언어이다.  
     ex) 생성(create), 변경(alter), 삭제(drop)
-  
+
+    
+      
 - 데이터 조작어 (DML; Data Management Language) : 사용자가 적절한 데이터 모델로 구성된 데이터를 접근하거나 조작할 수 있도록 하는 언어이다.  
     ex)검색(select), 삽입(insert), 삭제(delete), 수정(update)
   
         절차적 언어 : 처리 방법 및 절차를 명시  
         비절차적 언어 : 직관적 사용, 원하는 데이터만 명시  
+
   
+    
 - 데이터 제어어 (DCL; Data Contorl Language) : 보안, 무결성, 회복, 병행, 수행 제어 등을 정의하는데 사용되는 언어
     ex) commit, rollback, savepoint 등
 
