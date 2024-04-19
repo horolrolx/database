@@ -84,6 +84,7 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
         select name
         from instructor
         where salary is null;
+
         - is null -> null 값이면 true
         - is not null -> null 값이 아니면 true
         - null 값이 비교 구문에 포함될 경우 unknown으로 표시, unknown으로 결론 날 경우 false로 취급
@@ -92,7 +93,7 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
 - avg : average value ; 평균값
 - min : minimum value ; 최솟값
 - max : maximum value ; 최댓값
-- sum : sum of values ; gkq
+- sum : sum of values ; 합
 - count : number of values ; 개수 세기
 
 # Group By
@@ -107,3 +108,14 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
         group by dept_name
         having avg (salary) > 42000;
         dept_name으로 그룹화후 평균 salary가 42000보다 큰 모든 과를 찾아서 이름을 보여준다.
+
+
+        select distinct T.name
+        from instructor as T, instructor as S
+        where T.salary > S.salary and S.dept_name = 'Biology';
+        
+        select name
+        from instructor
+        where salary > some (select salary
+                                from instructor
+                                where dept_name = 'Biology');
