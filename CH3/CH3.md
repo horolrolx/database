@@ -56,7 +56,7 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
 
 
   
-- Set Operations (집합 연산)
+# Set Operations (집합 연산)
         union ( 합집합 )
         (select course_id from section where sem='Fall' and year = 2017)
         union
@@ -88,14 +88,14 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
         - is not null -> null 값이 아니면 true
         - null 값이 비교 구문에 포함될 경우 unknown으로 표시, unknown으로 결론 날 경우 false로 취급
 
-- Aggregate functions (집계 함수)
+# Aggregate functions (집계 함수)
 - avg : average value ; 평균값
 - min : minimum value ; 최솟값
 - max : maximum value ; 최댓값
 - sum : sum of values ; gkq
 - count : number of values ; 개수 세기
 
-- Group By
+# Group By
 - 동일한 값끼리 묶어서 보여줌
         - select dept_name, avg (salary) as avg_salary
         from instructor
