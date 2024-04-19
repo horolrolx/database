@@ -1,6 +1,6 @@
 # 1. 데이터 정의 언어(Data-definition language : DDL)
 - DDL은 릴레이션 스키마를 정의하고, 릴레이션을 삭제하고, 릴레이션 스키마를 수정하는 명령어를 제공
-- create table , alter table a, drop
+- create table , alter table r add A D, drop table, alter table r drop A
 
         - ex) drop table student;        : 테이블과 그 내용 다 삭제
         - ex) delete from student;       : 테이블의 내용들은 다 삭제되지만 테이블은 유지
@@ -17,6 +17,7 @@
 - where 절은 from 절에 있는 릴레이션의 속성들을 포함하는 조건이다.
 
 - SQL은 relation과 attributes를 as 구문을 이용해서 이름을 재정의할 수 있다. (ex) old-name as new-name, 단, as생략 가능)
+
         - ex) select distinct T.name
         from instructor as T, instructor as S
         where T.salary > S.salary and S.dept_name = 'Comp.Sci.`
@@ -27,6 +28,7 @@
 
         - select name, title
         from (instructor natural join teaches) join course using (course_id);
+
 
 - select name
 from instructor
@@ -41,3 +43,5 @@ from instructor
 where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
 
 - name like '100\%' escape '\' -> 100%를 찾고 싶다면 escape문자인 /(슬래쉬) 사용
+
+- Set Operations (집합 연산)
