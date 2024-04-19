@@ -81,4 +81,29 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
 - 기본적으로 set operation들은 중복을 없앤다.
 - union all, intersect all, except all 처럼 all을 붙이면 중복을 보존한다.
 
-- 
+        select name
+        from instructor
+        where salary is null;
+        - is null -> null 값이면 true
+        - is not null -> null 값이 아니면 true
+        - null 값이 비교 구문에 포함될 경우 unknown으로 표시, unknown으로 결론 날 경우 false로 취급
+
+- Aggregate functions (집계 함수)
+- avg : average value ; 평균값
+- min : minimum value ; 최솟값
+- max : maximum value ; 최댓값
+- sum : sum of values ; gkq
+- count : number of values ; 개수 세기
+
+- Group By
+- 동일한 값끼리 묶어서 보여줌
+        - select dept_name, avg (salary) as avg_salary
+        from instructor
+        group by dept_name;
+        평균을 구할 때 dept_name을 기준으로 그룹화
+- group by를 하려면 반드시 select에 존재해야 한다.
+        - select dept_name, avg (salary) as avg_salary
+        from instructor
+        group by dept_name
+        having avg (salary) > 42000;
+        dept_name으로 그룹화후 평균 salary가 42000보다 큰 모든 과를 찾아서 이름을 보여준다.
