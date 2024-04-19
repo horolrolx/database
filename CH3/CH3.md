@@ -57,3 +57,28 @@ where name like '___%'; -> 3자 이상의 문자열을 찾는 쿼리
 
   
 - Set Operations (집합 연산)
+        union ( 합집합 )
+        (select course_id from section where sem='Fall' and year = 2017)
+        union
+        (select course_id from section where sem='Spring' and year = 2018);
+        //
+        FALL 2017과 SPRING 2018 학기에 열린 모든 강의들의 학수 번호
+
+        intersect (교집합)
+        (select course_id from section where sem='Fall' and year = 2017)
+        intersect
+        (select course_id from section where sem='Spring' and year = 2018);
+        //
+        FALL 2017 또는 SPRING 2018 학기에 열린 모든 강의들의 학수 번호
+
+        except (차집합)
+        (select course_id from section where sem='Fall' and year = 2017)
+        except
+        (select course_id from section where sem='Spring' and year = 2018);
+        //
+        FALL 2017에 열리고 SPRING 2018 학기에 안 열린 모든 강의들의 학수 번호
+
+- 기본적으로 set operation들은 중복을 없앤다.
+- union all, intersect all, except all 처럼 all을 붙이면 중복을 보존한다.
+
+- 
